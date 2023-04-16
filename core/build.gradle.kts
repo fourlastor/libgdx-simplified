@@ -52,16 +52,10 @@ tasks.compileJava.configure {
 }
 
 dependencies {
-    implementation(project(":gdx-auto-pool"))
-    implementation(project(":gdx-ldtk-loader"))
-    implementation(project(":gdx-text-loader"))
     implementation(libs.harlequin)
     implementation(libs.perceptual)
     implementation(libs.gdx.core)
     implementation(libs.gdx.ai)
-    implementation(libs.gdx.box2d.core)
-    implementation(libs.gdx.controllers.core)
-    implementation(libs.ashley)
     implementation(libs.textratypist)
     implementation(libs.dagger.core)
     api(libs.dagger.gwt)

@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import io.github.fourlastor.game.di.GameComponent;
-import io.github.fourlastor.game.gameover.GameOverComponent;
 import io.github.fourlastor.game.intro.IntroComponent;
 import io.github.fourlastor.game.level.di.LevelComponent;
 import io.github.fourlastor.game.route.Router;
@@ -17,30 +16,20 @@ public class GdxGame extends Game implements Router {
 
     private final LevelComponent.Builder levelScreenFactory;
     private final IntroComponent.Builder introScreenFactory;
-    private final GameOverComponent.Builder gameOverFactory;
 
     private Screen pendingScreen = null;
 
     public GdxGame(
             InputMultiplexer multiplexer,
             LevelComponent.Builder levelScreenFactory,
-            IntroComponent.Builder introScreenFactory,
-            GameOverComponent.Builder gameOverFactory) {
+            IntroComponent.Builder introScreenFactory) {
         this.multiplexer = multiplexer;
         this.levelScreenFactory = levelScreenFactory;
         this.introScreenFactory = introScreenFactory;
-        this.gameOverFactory = gameOverFactory;
     }
 
     @Override
     public void create() {
-        //        if (Gdx.app.getType() != Application.ApplicationType.Android) {
-        //
-        //            Cursor customCursor =
-        //                    Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("images/included/whitePixel.png")),
-        // 0, 0);
-        //            Gdx.graphics.setCursor(customCursor);
-        //        }
         Gdx.input.setInputProcessor(multiplexer);
         goToIntro();
     }
@@ -68,10 +57,5 @@ public class GdxGame extends Game implements Router {
     public void goToLevel() {
         pendingScreen =
                 levelScreenFactory.router(new RouterModule(this)).build().screen();
-    }
-
-    @Override
-    public void goToGameOver() {
-        pendingScreen = gameOverFactory.router(new RouterModule(this)).build().screen();
     }
 }
