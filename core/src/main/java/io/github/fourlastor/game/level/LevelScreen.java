@@ -3,7 +3,6 @@ package io.github.fourlastor.game.level;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-
 import javax.inject.Inject;
 
 public class LevelScreen extends ScreenAdapter {

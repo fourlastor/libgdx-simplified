@@ -8,8 +8,8 @@ import io.github.fourlastor.game.route.RouterModule;
 @ScreenScoped
 @Subcomponent(
         modules = {
-                LevelModule.class,
-                RouterModule.class,
+            LevelModule.class,
+            RouterModule.class,
         })
 public interface LevelComponent {
 

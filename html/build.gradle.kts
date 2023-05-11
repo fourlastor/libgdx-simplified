@@ -112,7 +112,6 @@ dependencies {
     sources(libs.gdx.backend.gwt)
     sources(libs.gdx.core)
     sources(libs.gdx.ai)
-    sources(libs.gdx.controllers.gwt)
     sources(libs.textratypist)
     sources(libs.regexodus)
     sources(libs.harlequin)
